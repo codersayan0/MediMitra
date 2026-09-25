@@ -1,0 +1,267 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "developers": "Developers",
+    "contact": "Contact",
+    "login": "Login",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Your Health Partner for a Better Tomorrow",
+    "titleLine1": "Healthcare Made Simple with",
+    "titleBrand": "MediMitra",
+    "desc": "MediMitra is an AI-powered healthcare platform that connects patients, doctors, and administrators — for a healthier, safer, and smarter tomorrow.",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Login",
+    "trust1": "Secure",
+    "trust2": "AI Powered",
+    "trust3": "Multi-language",
+    "trust4": "Trusted",
+    "stat1Value": "10K+",
+    "stat1Label": "Happy Patients",
+    "stat2Value": "500+",
+    "stat2Label": "Verified Doctors",
+    "stat3Value": "3",
+    "stat3Label": "Languages",
+    "stat4Value": "100%",
+    "stat4Label": "Secure & Private",
+    "floatAi": "AI Health Assistant",
+    "floatAiDesc": "Get instant answers",
+    "floatDoctors": "Find Trusted Doctors",
+    "floatDoctorsDesc": "Online Consultation",
+    "floatRecords": "Your Health Records",
+    "floatRecordsDesc": "Secure and Private"
+  },
+  "about": {
+    "title": "About MediMitra",
+    "desc": "MediMitra aims to bridge the gap between patients and healthcare providers using modern technology, AI, and a user-friendly platform. Our goal is to make quality healthcare accessible, affordable, and hassle-free for everyone.",
+    "cta": "Learn More",
+    "mediaCaption": "Healthier Tomorrow Starts Here"
+  },
+  "features": {
+    "eyebrow": "What We Offer",
+    "title": "Our Core Features",
+    "subtitle": "A complete healthcare experience built around patients, doctors and modern AI.",
+    "f1Title": "Easy Doctor Consultation",
+    "f1Desc": "Connect with verified doctors online or offline.",
+    "f2Title": "AI Health Assistant",
+    "f2Desc": "Get instant answers to your health-related queries.",
+    "f3Title": "Secure Health Records",
+    "f3Desc": "Your data is encrypted and always private.",
+    "f4Title": "Doctor Connectivity",
+    "f4Desc": "A platform designed to connect patients and doctors seamlessly.",
+    "f5Title": "Multi-language Support",
+    "f5Desc": "Available in English, Bengali and Hindi.",
+    "f6Title": "Smart Healthcare",
+    "f6Desc": "Technology-assisted workflows for a smoother experience."
+  },
+  "howItWorks": {
+    "eyebrow": "Simple Process",
+    "title": "How MediMitra Works",
+    "subtitle": "Getting started takes just a few minutes.",
+    "step1Title": "Choose Your Role",
+    "step1Desc": "Patient, Doctor or Admin",
+    "step2Title": "Create Account",
+    "step2Desc": "Quick & secure registration",
+    "step3Title": "Verify Your Identity",
+    "step3Desc": "Email OTP verification",
+    "step4Title": "Access Your Dashboard",
+    "step4Desc": "Start your healthcare journey"
+  },
+  "roles": {
+    "eyebrow": "Get Started",
+    "title": "Choose Your Role",
+    "subtitle": "Select how you'd like to use MediMitra.",
+    "patientTitle": "Patient",
+    "patientDesc": "Book appointments, consult doctors and manage your health.",
+    "patientCta": "Continue as Patient",
+    "doctorTitle": "Doctor",
+    "doctorDesc": "Join as a verified doctor and help patients.",
+    "doctorCta": "Continue as Doctor",
+    "adminTitle": "Administrator",
+    "adminDesc": "Manage platform activities and ensure smooth operation.",
+    "adminCta": "Continue as Admin"
+  },
+  "roleSelection": {
+    "badge": "Phase 3 · Choose Your Role",
+    "titleLine1": "How do you want to use",
+    "titleBrand": "MediMitra",
+    "titleSuffix": "?",
+    "desc": "Select your role to get started. Whether you're a patient, doctor, or administrator, MediMitra gives you a seamless and secure healthcare experience.",
+    "floatBadge1": "Better Care For Everyone",
+    "floatBadge2": "Trusted Healthcare Platform",
+    "patient": {
+      "title": "Patient",
+      "desc": "Book appointments, consult doctors and manage your health.",
+      "features": [
+        "Find and book appointments",
+        "Consult with verified doctors",
+        "Access health records",
+        "AI health assistant",
+        "Personalized recommendations"
+      ],
+      "cta": "Continue as Patient"
+    },
+    "doctor": {
+      "title": "Doctor",
+      "desc": "Join as a verified doctor and help patients.",
+      "features": [
+        "Manage appointments",
+        "View patient history",
+        "Share prescriptions",
+        "Use AI assistance tools",
+        "Grow your practice"
+      ],
+      "cta": "Continue as Doctor"
+    },
+    "admin": {
+      "title": "Administrator",
+      "desc": "Manage platform activities and ensure smooth operation.",
+      "features": [
+        "Manage users and doctors",
+        "Verify doctor credentials",
+        "Monitor platform activities",
+        "View reports and analytics",
+        "Maintain system security"
+      ],
+      "cta": "Continue as Admin"
+    },
+    "trust": {
+      "secureTitle": "Secure & Private",
+      "secureDesc": "Your data is encrypted and protected.",
+      "aiTitle": "AI Powered",
+      "aiDesc": "Advanced AI assistance for better care.",
+      "languageTitle": "Multi-language",
+      "languageDesc": "Available in English, Bengali and Hindi.",
+      "trustedTitle": "Trusted Platform",
+      "trustedDesc": "Built for a healthier tomorrow."
+    }
+  },
+  "ai": {
+    "title": "Powered by AI for a Smarter Healthcare Experience",
+    "desc": "MediMitra uses advanced AI (Gemini) and RAG to provide reliable, context-aware and up-to-date health information. It is designed to assist patients and healthcare professionals — not to replace medical advice from a qualified doctor.",
+    "chip1": "Gemini",
+    "chip2": "LLM",
+    "chip3": "RAG",
+    "chip4": "AI Assistant"
+  },
+  "developer": {
+    "title": "Developed by",
+    "role": "B.Tech — Computer Science & Engineering",
+    "tagline": "Building innovative solutions for a better tomorrow.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "portfolio": "Portfolio"
+  },
+  "footer": {
+    "desc": "An AI-powered healthcare platform connecting patients, doctors and administrators for a healthier tomorrow.",
+    "navHeading": "Navigation",
+    "rolesHeading": "Get Started",
+    "moreHeading": "More",
+    "languageLabel": "Languages: English, বাংলা, हिन्दी",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "placeholder": {
+    "loginTitle": "{role} Login",
+    "registerTitle": "{role} Registration",
+    "dashboardTitle": "{role} Dashboard",
+    "desc": "This page is a placeholder for the upcoming authentication and dashboard system. Full functionality will be available in a future release.",
+    "backHome": "Back to Home"
+  },
+  "roleNames": {
+    "patient": "Patient",
+    "doctor": "Doctor",
+    "admin": "Administrator"
+  },
+  "auth": {
+  "trust": "Your information is protected and securely transmitted using industry-standard security practices.",
+  "fields": {
+    "title": "Title",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "dob": "Date of Birth",
+    "address": "Address",
+    "country": "Country",
+    "state": "State",
+    "district": "District",
+    "pinCode": "PIN Code",
+    "idType": "Government ID Type",
+    "idNumber": "Government ID Number",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "passwordMismatch": "Passwords do not match.",
+    "termsRequired": "You must accept the Terms & Conditions."
+  },
+  "login": {
+    "title": "Patient Login",
+    "subtitle": "Welcome back. Please login to continue.",
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forgot Password?",
+    "submit": "Login",
+    "submitting": "Logging in...",
+    "orContinueWith": "or continue with",
+    "google": "Continue with Google",
+    "microsoft": "Continue with Microsoft",
+    "oauthUnavailable": "{provider} login will be available once OAuth configuration is enabled.",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create Account"
+  },
+  "register": {
+    "title": "Create Your Patient Account",
+    "subtitle": "Complete your information to get started",
+    "sectionPersonal": "Personal Information",
+    "sectionAddress": "Address Information",
+    "sectionIdentity": "Identity Information",
+    "sectionContact": "Contact Information",
+    "sectionSecurity": "Account Security",
+    "uploadImage": "Upload Photo",
+    "changeImage": "Change Photo",
+    "removeImage": "Remove",
+    "imageHint": "Optional. Stored only on this device, never uploaded.",
+    "terms": "I agree to the Terms & Conditions and Privacy Policy",
+    "submit": "Create Account",
+    "submitting": "Creating account...",
+    "haveAccount": "Already have an account?"
+  },
+  "otp": {
+    "title": "Verify Your Email",
+    "subtitle": "We've sent a 6-digit verification code to {email}",
+    "submit": "Verify Email",
+    "submitting": "Verifying...",
+    "noCode": "Didn't receive the code?",
+    "resend": "Resend Code",
+    "resendIn": "Resend Code in {time}",
+    "resent": "A new code has been sent to your email."
+  },
+  "forgotPassword": {
+    "title": "Reset Your Password",
+    "emailSubtitle": "Enter your email and we'll send you a verification code.",
+    "sendCode": "Send Code",
+    "sending": "Sending...",
+    "genericSent": "If the account exists, a verification code has been sent.",
+    "newPasswordSubtitle": "Choose a new password for your account.",
+    "newPassword": "New Password",
+    "updatePassword": "Update Password",
+    "updating": "Updating..."
+  },
+  "dashboard": {
+    "welcome": "Welcome to MediMitra",
+    "title": "Patient Dashboard",
+    "comingSoon": "Coming Soon",
+    "desc": "Your personalized healthcare experience is being prepared. More features will be available in the next phase.",
+    "logout": "Logout"
+  }
+}
+}

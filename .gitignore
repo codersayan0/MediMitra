@@ -1,0 +1,353 @@
+# ============================================================
+# MediMitra - Full Stack .gitignore
+# React + Vite + TypeScript + FastAPI + Python + MongoDB
+# ============================================================
+
+
+# ------------------------------------------------------------
+# ENVIRONMENT VARIABLES / SECRETS
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+
+# ------------------------------------------------------------
+# NODE / REACT / VITE
+# ------------------------------------------------------------
+
+node_modules/
+frontend/node_modules/
+**/node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+# Vite
+frontend/dist/
+dist/
+.vite/
+
+# Build output
+build/
+frontend/build/
+
+# Coverage
+coverage/
+.nyc_output/
+
+
+# ------------------------------------------------------------
+# PYTHON / FASTAPI
+# ------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+wheels/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# tox
+.tox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# ------------------------------------------------------------
+# DATABASE / LOCAL DATA
+# ------------------------------------------------------------
+
+# Local MongoDB / database files
+data/
+database/
+db/
+mongodb/
+mongo-data/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Local JSON/data files that may contain user information
+*.local.json
+local-data/
+
+
+# ------------------------------------------------------------
+# LOGS
+# ------------------------------------------------------------
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# FastAPI/Uvicorn logs
+uvicorn.log/
+
+
+# ------------------------------------------------------------
+# UPLOADS / USER GENERATED FILES
+# ------------------------------------------------------------
+
+# Do not commit local user uploads
+uploads/
+backend/uploads/
+frontend/uploads/
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+
+# ------------------------------------------------------------
+# GENERATED / TEMPORARY FILES
+# ------------------------------------------------------------
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+.DS_Store
+Thumbs.db
+
+
+# ------------------------------------------------------------
+# IDE / EDITOR
+# ------------------------------------------------------------
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+
+# Visual Studio
+.vs/
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+
+# ------------------------------------------------------------
+# TYPESCRIPT
+# ------------------------------------------------------------
+
+*.tsbuildinfo
+
+
+# ------------------------------------------------------------
+# REACT / TYPESCRIPT CACHE
+# ------------------------------------------------------------
+
+.eslintcache
+.stylelintcache
+
+
+# ------------------------------------------------------------
+# OS FILES
+# ------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon?
+
+._*
+
+.Spotlight-V100
+.Trashes
+
+ehthumbs.db
+Thumbs.db
+
+
+# ------------------------------------------------------------
+# SECURITY / CERTIFICATES / PRIVATE KEYS
+# ------------------------------------------------------------
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Service account credentials
+service-account*.json
+credentials*.json
+google-credentials*.json
+
+
+# ------------------------------------------------------------
+# TEST / TEMP FILES
+# ------------------------------------------------------------
+
+test-output/
+test-results/
+playwright-report/
+blob-report/
+
+*.snap
+
+
+# ------------------------------------------------------------
+# DOCKER
+# ------------------------------------------------------------
+
+.docker/
+docker-data/
+
+# Do not accidentally commit local Docker environment files
+docker-compose.override.yml
+
+
+# ------------------------------------------------------------
+# VERCEL
+# ------------------------------------------------------------
+
+.vercel/
+
+
+# ------------------------------------------------------------
+# RENDER / DEPLOYMENT
+# ------------------------------------------------------------
+
+# Local deployment metadata
+.render/
+
+
+# ------------------------------------------------------------
+# SECRET / BACKUP FILES
+# ------------------------------------------------------------
+
+*.secret
+*.secrets
+*.credentials
+
+*.backup
+*.bak
+
+# Backup environment files
+.env.bak
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# ------------------------------------------------------------
+# MEDIMITRA SPECIFIC
+# ------------------------------------------------------------
+
+# Local patient/user generated files
+patient-uploads/
+patient-documents/
+
+# Temporary OTP/debug files
+otp-debug/
+otp.log
+
+# Local authentication/session files
+auth-debug/
+sessions/
+
+# Local AI/cache files
+ai-cache/
+rag-cache/
+model-cache/
+
+# Python model/cache files
+*.pkl
+*.pickle
+
+# Local development exports
+exports/
+reports/
+
+
+# ------------------------------------------------------------
+# KEEP EXAMPLE CONFIGURATION FILES
+# ------------------------------------------------------------
+
+!.env.example
+!frontend/.env.example
+!backend/.env.example
+
+
+# ------------------------------------------------------------
+# IMPORTANT
+# ------------------------------------------------------------
+
+# Never commit:
+# - passwords
+# - JWT secrets
+# - MongoDB URI
+# - EmailJS private credentials
+# - API keys
+# - OAuth client secrets
+# - patient documents
+# - patient identity documents
+# - private certificates
+# - private keys

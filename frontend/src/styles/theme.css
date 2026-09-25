@@ -1,0 +1,82 @@
+/* ==========================================================================
+   MediMitra Design System — Theme Tokens
+   Centralized CSS variables. Components must consume these, never hardcode
+   colors, so light/dark mode stays consistent app-wide.
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --primary: #0ea5e9;
+  --primary-dark: #0369a1;
+  --primary-hover: #0284c7;
+  --accent: #14b8a6;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+
+  /* Gradients (used sparingly, e.g. logo text, CTAs) */
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+
+  /* Radii / shadows / motion */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --container-width: 1240px;
+}
+
+/* -------------------- Light theme (default) -------------------- */
+:root,
+[data-theme="light"] {
+  --background: #f6f9fc;
+  --surface: #ffffff;
+  --surface-secondary: #eef3f8;
+  --surface-inverse: #0b1220;
+  --text-primary: #0f172a;
+  --text-secondary: #4b5c72;
+  --text-muted: #7a8ba1;
+  --text-on-primary: #ffffff;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --overlay: rgba(15, 23, 42, 0.55);
+}
+
+/* -------------------- Dark theme -------------------- */
+[data-theme="dark"] {
+  --background: #060a14;
+  --surface: #0d1526;
+  --surface-secondary: #121b30;
+  --surface-inverse: #f6f9fc;
+  --text-primary: #eef3f8;
+  --text-secondary: #a9b8cd;
+  --text-muted: #7688a3;
+  --text-on-primary: #ffffff;
+  --border: #1e2a42;
+  --border-strong: #2b3b58;
+  --overlay: rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.55);
+}
+
+/* Respect OS theme automatically only when the user has no saved choice.
+   ThemeContext sets data-theme explicitly on <html>, so this block only
+   matters before JS runs / as a graceful no-JS fallback. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #060a14;
+    --surface: #0d1526;
+    --surface-secondary: #121b30;
+    --surface-inverse: #f6f9fc;
+    --text-primary: #eef3f8;
+    --text-secondary: #a9b8cd;
+    --text-muted: #7688a3;
+    --border: #1e2a42;
+    --border-strong: #2b3b58;
+  }
+}

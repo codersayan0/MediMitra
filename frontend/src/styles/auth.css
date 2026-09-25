@@ -1,0 +1,447 @@
+/* ============ Auth pages (Login / Register / OTP / Forgot Password) ============ */
+/* Uses the existing design tokens from theme.css only — no new theme system. */
+
+.auth-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.auth-loading {
+  min-height: 40vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 36px 32px;
+}
+
+.auth-card--wide {
+  max-width: 760px;
+}
+
+.auth-card--center {
+  text-align: center;
+}
+
+.auth-card__title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.auth-card__subtitle {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin-bottom: 20px;
+}
+
+.auth-trust {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin: 0;
+}
+
+.form-section legend {
+  font-weight: 700;
+  font-size: 15px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-section__num {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.form-field--sm {
+  grid-column: span 1;
+}
+
+.form-field label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-field input,
+.form-field select {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 14.5px;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--primary);
+}
+
+.input-with-action {
+  position: relative;
+  display: flex;
+}
+
+.input-with-action input {
+  flex: 1;
+  padding-right: 64px;
+}
+
+.input-action {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.auth-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.auth-link {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.auth-link--button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.form-notice {
+  color: var(--text-secondary);
+  background: var(--surface-secondary);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 13px;
+  margin: 0;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  text-transform: uppercase;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-footer-text {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+/* Password strength */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.password-strength__bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.password-strength__bar {
+  height: 4px;
+  flex: 1;
+  border-radius: var(--radius-full);
+  background: var(--border);
+}
+
+.password-strength__bar.is-filled.level-0 { background: var(--danger); }
+.password-strength__bar.is-filled.level-1 { background: var(--warning); }
+.password-strength__bar.is-filled.level-2 { background: #eab308; }
+.password-strength__bar.is-filled.level-3 { background: var(--accent); }
+.password-strength__bar.is-filled.level-4 { background: var(--success); }
+
+.password-strength__label {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* OTP */
+.otp-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.otp-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.otp-input__box {
+  width: 44px;
+  height: 52px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.otp-input__box:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Profile image uploader */
+.profile-uploader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.profile-uploader__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--surface-secondary);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.profile-uploader__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-uploader__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-uploader__pick,
+.profile-uploader__remove {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.profile-uploader__remove {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.profile-uploader__hint {
+  width: 100%;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Dashboard */
+.dashboard {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard__brand {
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--surface-secondary);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.dashboard__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 90px);
+  padding: 40px 20px;
+}
+
+.dashboard__card {
+  max-width: 520px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 48px 36px;
+}
+
+.dashboard__illustration {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.dashboard__card h1 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+.dashboard__patient-name {
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  margin-bottom: 14px;
+}
+
+.dashboard__badge {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.dashboard__desc {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .auth-card--wide {
+    padding: 28px 20px;
+  }
+  .otp-input__box {
+    width: 38px;
+    height: 46px;
+  }
+}
