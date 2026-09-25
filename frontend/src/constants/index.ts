@@ -8,18 +8,48 @@ export const STORAGE_KEYS = {
 } as const;
 
 export const LANGUAGES: LanguageOption[] = [
-  { code: "en", label: "English", nativeLabel: "English" },
-  { code: "bn", label: "Bengali", nativeLabel: "বাংলা" },
-  { code: "hi", label: "Hindi", nativeLabel: "हिन्दी" },
+  {
+    code: "en",
+    label: "English",
+    nativeLabel: "English",
+  },
+  {
+    code: "bn",
+    label: "Bengali",
+    nativeLabel: "বাংলা",
+  },
+  {
+    code: "hi",
+    label: "Hindi",
+    nativeLabel: "हिन्दी",
+  },
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  { key: "home", href: "#home" },
-  { key: "about", href: "#about" },
-  { key: "features", href: "#features" },
-  { key: "howItWorks", href: "#how-it-works" },
-  { key: "developers", href: "#developers" },
-  { key: "contact", href: "#contact" },
+  {
+    key: "home",
+    href: "#home",
+  },
+  {
+    key: "about",
+    href: "#about",
+  },
+  {
+    key: "features",
+    href: "#features",
+  },
+  {
+    key: "howItWorks",
+    href: "#how-it-works",
+  },
+  {
+    key: "developers",
+    href: "#developers",
+  },
+  {
+    key: "contact",
+    href: "#contact",
+  },
 ];
 
 export const IMAGES = {
@@ -31,6 +61,11 @@ export const IMAGES = {
 
 export const ROUTES = {
   home: "/",
+
+  // Role selection
+  roleSelection: "/role-selection",
+
+  // Patient
   patient: {
     login: "/patient/login",
     register: "/patient/register",
@@ -38,11 +73,15 @@ export const ROUTES = {
     forgotPassword: "/patient/forgot-password",
     dashboard: "/patient/dashboard",
   },
+
+  // Doctor
   doctor: {
     login: "/doctor/login",
     register: "/doctor/register",
     dashboard: "/doctor/dashboard",
   },
+
+  // Administrator
   admin: {
     login: "/admin/login",
     dashboard: "/admin/dashboard",
@@ -85,9 +124,18 @@ export const DEVELOPER = {
 };
 
 export const ID_PROOF_OPTIONS = [
-  { value: "aadhaar", label: "Aadhaar Card" },
-  { value: "voter_id", label: "Voter ID" },
-  { value: "driving_licence", label: "Driving Licence" },
+  {
+    value: "aadhaar",
+    label: "Aadhaar Card",
+  },
+  {
+    value: "voter_id",
+    label: "Voter ID",
+  },
+  {
+    value: "driving_licence",
+    label: "Driving Licence",
+  },
 ] as const;
 
 export const TITLE_OPTIONS = ["Mr", "Mrs", "Miss"] as const;
