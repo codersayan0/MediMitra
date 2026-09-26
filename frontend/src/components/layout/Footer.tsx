@@ -1,5 +1,7 @@
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { NAV_LINKS, ROUTES, DEVELOPER } from "@/constants";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   const { t } = useLanguage();

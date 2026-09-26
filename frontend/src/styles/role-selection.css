@@ -98,7 +98,16 @@
   flex-direction: column;
   gap: 14px;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  opacity: 0;
+  transition: opacity 550ms ease, transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition-delay: calc(var(--card-index, 0) * 90ms), 0ms, 0ms;
+}
+
+/* Staggered entrance once the grid scrolls into view (useReveal adds
+   is-visible to the parent). Falls back to fully visible immediately
+   under reduced motion, see media query below. */
+.role-select__grid.is-visible .role-select-card {
+  opacity: 1;
 }
 
 .role-select-card:hover {
@@ -115,6 +124,7 @@
   font-size: 24px;
   color: #fff;
   background: var(--role-color, var(--primary));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--role-color, var(--primary)) 14%, transparent);
 }
 
 .role-select-card__title {

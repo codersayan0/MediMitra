@@ -7,17 +7,15 @@ import { Button } from "@/components/ui/Button";
 import { IMAGES, ROLE_OPTIONS } from "@/constants";
 import type { UserRole } from "@/types";
 
-const ROLE_ICONS: Record<UserRole, string> = {
-  patient: "🧑",
-  doctor: "🩺",
-  admin: "🛡️",
-};
-
 /**
  * Phase 3 — "Choose Your Role" page.
  * Reached from the landing page's Login / Get Started actions. Presents the
  * three entry points (Patient, Doctor, Administrator) as premium cards
  * before handing off to the respective (placeholder) auth pages.
+ *
+ * Role glyphs come from ROLE_OPTIONS (constants/index.ts) — the same source
+ * RoleSection.tsx uses on the landing page — rather than a page-local copy,
+ * so the two can never silently drift out of sync.
  */
 export function RoleSelectionPage() {
   const { t } = useLanguage();
@@ -83,14 +81,17 @@ export function RoleSelectionPage() {
       <section className="section role-select__cards-section" aria-label="Choose your role">
         <div className="container">
           <div className="role-select__grid reveal" ref={cardsRef}>
-            {ROLE_OPTIONS.map((option) => {
+            {ROLE_OPTIONS.map((option, index) => {
               const copy = roleCopy[option.role];
-              const cardStyle = { "--role-color": option.colorVar } as CSSProperties;
+              const cardStyle = {
+                "--role-color": option.colorVar,
+                "--card-index": index,
+              } as CSSProperties;
 
               return (
                 <article className="role-select-card" key={option.role} style={cardStyle}>
                   <div className="role-select-card__icon" aria-hidden="true">
-                    {ROLE_ICONS[option.role]}
+                    {option.icon}
                   </div>
                   <h2 className="role-select-card__title">{copy.title}</h2>
                   <p className="role-select-card__desc">{copy.desc}</p>
