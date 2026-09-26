@@ -35,6 +35,14 @@ class Settings(BaseSettings):
     google_oauth_client_id: str = ""
     microsoft_oauth_client_id: str = ""
 
+    # Administrative login — credentials live ONLY here (backend env), never in
+    # MongoDB and never sent to the frontend. Empty defaults mean "not
+    # configured yet"; admin_auth_service treats that as an always-invalid
+    # login rather than crashing the app on startup.
+    admin_login_id: str = ""
+    admin_login_password: str = ""
+    admin_jwt_secret: str = ""
+
 
 @lru_cache
 def get_settings() -> Settings:

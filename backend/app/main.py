@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 
+from app.api.routes import admin_auth as admin_auth_routes
 from app.api.routes import auth as auth_routes
 from app.api.routes import doctor_auth as doctor_auth_routes
 from app.api.routes import health as health_routes
@@ -17,8 +18,8 @@ settings = get_settings()
 
 app = FastAPI(
     title="MediMitra API",
-    description="Backend for the MediMitra healthcare platform — Patient & Doctor auth.",
-    version="1.1.0",
+    description="Backend for the MediMitra healthcare platform — Patient, Doctor & Administrative auth.",
+    version="1.2.0",
 )
 
 app.add_middleware(
@@ -53,6 +54,7 @@ async def on_shutdown():
 app.include_router(health_routes.router, prefix="/api")
 app.include_router(auth_routes.router, prefix="/api")
 app.include_router(doctor_auth_routes.router, prefix="/api")
+app.include_router(admin_auth_routes.router, prefix="/api")
 
 
 @app.post("/api/auth/logout", response_model=ApiResponse[dict])

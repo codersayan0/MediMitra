@@ -355,5 +355,22 @@
       "desc": "Your personalized practice dashboard is being prepared. Appointments, patient management, prescriptions and AI tools will be available in the next phase.",
       "logout": "Logout"
     }
+  },
+  "adminAuth": {
+  "login": {
+    "title": "Administrative Login",
+    "subtitle": "Sign in with your administrator credentials to continue.",
+    "adminId": "Admin ID",
+    "submit": "Login",
+    "submitting": "Logging in...",
+    "backToRoleSelection": "Back to role selection"
+  },
+  "dashboard": {
+    "welcome": "Welcome to MediMitra",
+    "title": "Administrative Dashboard",
+    "comingSoon": "Coming Soon",
+    "desc": "Administrative features are currently under development and will be available in a future phase.",
+    "logout": "Logout"
   }
+}
 }

@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { DoctorAuthProvider } from "@/contexts/DoctorAuthContext";
+import { AdminAuthProvider } from "@/contexts/AdminAuthContext";
 import { AppRoutes } from "@/routes/AppRoutes";
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
       <LanguageProvider>
         <AuthProvider>
           <DoctorAuthProvider>
-            <BrowserRouter>
-              <AppRoutes />
-            </BrowserRouter>
+            <AdminAuthProvider>
+              <BrowserRouter>
+                <AppRoutes />
+              </BrowserRouter>
+            </AdminAuthProvider>
           </DoctorAuthProvider>
         </AuthProvider>
       </LanguageProvider>

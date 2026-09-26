@@ -4,7 +4,6 @@ import { MainLayout } from "@/layouts/MainLayout";
 
 import { LandingPage } from "@/pages/LandingPage";
 import { RoleSelectionPage } from "@/pages/RoleSelectionPage";
-import { PlaceholderPage } from "@/pages/PlaceholderPage";
 
 import { PatientLogin } from "@/pages/patient/PatientLogin";
 import { PatientRegister } from "@/pages/patient/PatientRegister";
@@ -18,8 +17,12 @@ import { DoctorVerifyEmail } from "@/pages/doctor/DoctorVerifyEmail";
 import { DoctorForgotPassword } from "@/pages/doctor/DoctorForgotPassword";
 import { DoctorDashboard } from "@/pages/doctor/DoctorDashboard";
 
+import { AdminLogin } from "@/pages/admin/AdminLogin";
+import { AdminDashboard } from "@/pages/admin/AdminDashboard";
+
 import { ProtectedRoute } from "@/routes/ProtectedRoute";
 import { DoctorProtectedRoute } from "@/routes/DoctorProtectedRoute";
+import { AdminProtectedRoute } from "@/routes/AdminProtectedRoute";
 
 import { ROUTES } from "@/constants";
 
@@ -60,9 +63,16 @@ export function AppRoutes() {
         }
       />
 
-      {/* ========================================================= ADMINISTRATOR (Phase 2) */}
-      <Route path={ROUTES.admin.login} element={<MainLayout><PlaceholderPage role="admin" kind="login" /></MainLayout>} />
-      <Route path={ROUTES.admin.dashboard} element={<MainLayout><PlaceholderPage role="admin" kind="dashboard" /></MainLayout>} />
+      {/* ========================================================= ADMINISTRATOR */}
+      <Route path={ROUTES.admin.login} element={<MainLayout><AdminLogin /></MainLayout>} />
+      <Route
+        path={ROUTES.admin.dashboard}
+        element={
+          <AdminProtectedRoute>
+            <AdminDashboard />
+          </AdminProtectedRoute>
+        }
+      />
 
       {/* ========================================================= FALLBACK */}
       <Route path="*" element={<MainLayout><LandingPage /></MainLayout>} />

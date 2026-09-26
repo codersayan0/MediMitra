@@ -183,3 +183,22 @@ export interface DoctorDocumentRecord {
   size: number;
   dataUrl: string;
 }
+
+/* ---------------- Admin auth (backend-aligned, schemas/admin.py) ---------------- */
+
+export interface AdminLoginPayload {
+  login_id: string;
+  password: string;
+}
+
+/** Safe-to-store admin shape. There is no admin collection/profile in
+ * MongoDB — the role claim on the JWT is the entire "identity". */
+export interface AdminProfile {
+  role: "admin";
+}
+
+export interface AdminTokenResponse {
+  access_token: string;
+  token_type: "bearer";
+  role: "admin";
+}

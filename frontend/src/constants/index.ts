@@ -11,6 +11,9 @@ export const STORAGE_KEYS = {
   doctorToken: "medimitra_doctor_token",
   doctorProfileImage: "medimitra_doctor_profile_image",
   doctorMedicalDocument: "medimitra_doctor_medical_document",
+
+  // Admin — its own namespaced key; never reuses patientToken/doctorToken.
+  adminToken: "medimitra_admin_token",
 } as const;
 
 export const LANGUAGES: LanguageOption[] = [
