@@ -133,3 +133,93 @@ class AuthTokenResponse(BaseModel):
     access_token: str
     token_type: Literal["bearer"] = "bearer"
     patient: PatientPublic
+
+class PatientProfileUpdateRequest(BaseModel):
+    phone: Optional[str] = Field(
+        default=None,
+        min_length=10,
+        max_length=15,
+    )
+
+    address: Optional[str] = Field(
+        default=None,
+        min_length=3,
+        max_length=500,
+    )
+
+    country: Optional[str] = Field(
+        default=None,
+        min_length=2,
+        max_length=100,
+    )
+
+    state: Optional[str] = Field(
+        default=None,
+        min_length=2,
+        max_length=100,
+    )
+
+    district: Optional[str] = Field(
+        default=None,
+        min_length=2,
+        max_length=100,
+    )
+
+    pin_code: Optional[str] = Field(
+        default=None,
+        min_length=4,
+        max_length=10,
+    )
+
+    @field_validator("phone")
+    @classmethod
+    def validate_phone(cls, value):
+        if value is None:
+            return value
+
+        cleaned = value.strip()
+
+        if not cleaned.isdigit():
+            raise ValueError("Phone number must contain only digits.")
+
+        return cleaned
+
+    @field_validator(
+        "address",
+        "country",
+        "state",
+        "district",
+        "pin_code",
+    )
+    @classmethod
+    def clean_text_fields(cls, value):
+        if value is None:
+            return value
+
+        return value.strip()
+
+
+class PatientProfileResponse(BaseModel):
+    id: str
+    patient_id: str
+
+    title: str
+    first_name: str
+    last_name: str
+
+    date_of_birth: str
+
+    address: str
+    country: str
+    state: str
+    district: str
+    pin_code: str
+
+    email: str
+    phone: str
+
+    role: str = "patient"
+    email_verified: bool
+
+    created_at: datetime
+    updated_at: Optional[datetime] = None

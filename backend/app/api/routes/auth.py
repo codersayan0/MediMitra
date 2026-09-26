@@ -11,6 +11,7 @@ from app.schemas.auth import (
     ResetPasswordRequest,
     VerifyEmailRequest,
     VerifyResetOtpRequest,
+    PatientProfileUpdateRequest,
 )
 from app.schemas.common import ApiResponse
 from app.services import auth_service, patient_service
@@ -99,3 +100,32 @@ async def reset_password(payload: ResetPasswordRequest):
 @router.get("/me", response_model=ApiResponse[PatientPublic])
 async def get_me(current=Depends(get_current_patient)):
     return ApiResponse(success=True, data=patient_service.to_public(current))
+
+@router.patch(
+    "/profile",
+    status_code=status.HTTP_200_OK,
+)
+async def update_patient_profile(
+    payload: PatientProfileUpdateRequest,
+    current_patient: dict = Depends(get_current_patient),
+):
+    updated_patient = await patient_service.update_profile(
+        patient_id=current_patient["patient_id"],
+        update_data=payload.model_dump(
+            exclude_unset=True
+        ),
+    )
+
+    if updated_patient is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient profile not found.",
+        )
+
+    return {
+        "success": True,
+        "message": "Patient profile updated successfully.",
+        "data": patient_service.to_public(
+            updated_patient
+        ),
+    }

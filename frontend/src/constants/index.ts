@@ -46,13 +46,13 @@ export const ROUTES = {
 
   // Patient
   patient: {
-    login: "/patient/login",
-    register: "/patient/register",
-    verifyEmail: "/patient/verify-email",
-    forgotPassword: "/patient/forgot-password",
-    dashboard: "/patient/dashboard",
-  },
-
+  login: "/patient/login",
+  register: "/patient/register",
+  verifyEmail: "/patient/verify-email",
+  forgotPassword: "/patient/forgot-password",
+  dashboard: "/patient/dashboard",
+  profile: "/patient/profile",
+},
   // Doctor
   doctor: {
     login: "/doctor/login",

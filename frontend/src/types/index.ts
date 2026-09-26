@@ -45,14 +45,27 @@ export type IdProofType = "aadhaar" | "voter_id" | "driving_licence";
 export interface PatientProfile {
   id: string;
   patient_id: string;
+
   title: Title;
   first_name: string;
   last_name: string;
+
+  date_of_birth: string;
+
+  address: string;
+  country: string;
+  state: string;
+  district: string;
+  pin_code: string;
+
   email: string;
   phone: string;
+
   role: "patient";
   email_verified: boolean;
+
   created_at: string;
+  updated_at?: string;
 }
 
 export interface PatientRegisterPayload {

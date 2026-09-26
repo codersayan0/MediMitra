@@ -95,3 +95,47 @@ async def update_password(email: str, password_hash: str) -> None:
 
 def to_public(doc: dict) -> PatientPublic:
     return _to_public(doc)
+
+async def update_profile(
+    self,
+    patient_id: str,
+    update_data: dict,
+):
+    """
+    Update allowed patient profile fields.
+
+    Sensitive fields such as password, ID proof number,
+    email and patient_id are intentionally not editable here.
+    """
+
+    allowed_fields = {
+        "phone",
+        "address",
+        "country",
+        "state",
+        "district",
+        "pin_code",
+    }
+
+    update_fields = {
+        key: value
+        for key, value in update_data.items()
+        if key in allowed_fields and value is not None
+    }
+
+    if not update_fields:
+        return None
+
+    update_fields["updated_at"] = datetime.now(timezone.utc)
+
+    result = await self.collection.update_one(
+        {"patient_id": patient_id},
+        {"$set": update_fields},
+    )
+
+    if result.matched_count == 0:
+        return None
+
+    return await self.collection.find_one(
+        {"patient_id": patient_id}
+    )

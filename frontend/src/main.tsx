@@ -10,6 +10,7 @@ import "@/styles/auth.css";
 import "@/styles/doctor.css";
 import "@/styles/role-selection.css";
 import "@/styles/patient-dashboard.css";
+import "@/styles/patient-profile.css";
 
 const rootElement = document.getElementById("root");
 
