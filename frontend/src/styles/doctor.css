@@ -1,0 +1,142 @@
+/* ============ Doctor registration — segmented control, repeatable groups, document uploader ============ */
+/* Uses the existing design tokens from theme.css only — no new theme system. */
+
+.segmented {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.segmented__option {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 10px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.segmented__option.is-active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Repeatable groups (availability slots / chambers) */
+.repeatable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.repeatable-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px 8px;
+  background: var(--surface-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.repeatable-card__remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.repeatable-add {
+  align-self: flex-start;
+  background: none;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* Medical document uploader */
+.doc-uploader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-secondary);
+}
+
+.doc-uploader__icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.doc-uploader__meta {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.doc-uploader__meta strong {
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+.doc-uploader__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.doc-uploader__pick,
+.doc-uploader__remove {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.doc-uploader__remove {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.doc-uploader__hint {
+  width: 100%;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 2px 0 0;
+}
+
+@media (max-width: 720px) {
+  .segmented__option {
+    min-width: 90px;
+  }
+}

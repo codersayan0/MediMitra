@@ -85,3 +85,101 @@ export interface AuthTokenResponse {
   token_type: "bearer";
   patient: PatientProfile;
 }
+
+/* ---------------- Doctor auth (backend-aligned, schemas/doctor.py) ---------------- */
+
+export type DoctorTitle = "Dr";
+export type DoctorIdProofType = IdProofType;
+export type DoctorConsultationType = "in_person" | "online";
+export type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+export interface DoctorDegree {
+  degree_name: string;
+  institution: string;
+  passing_year: number;
+}
+
+export interface DoctorAvailability {
+  day: DayOfWeek;
+  start_time: string; // "HH:MM", 24-hour
+  end_time: string; // "HH:MM", 24-hour
+}
+
+export interface DoctorChamber {
+  name: string;
+  address: string;
+  country: string;
+  state: string;
+  district: string;
+  pin_code: string;
+}
+
+export interface DoctorProfile {
+  id: string;
+  doctor_id: string;
+  title: DoctorTitle;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  specialization: string;
+  consultation_type: DoctorConsultationType[];
+  availability: DoctorAvailability[];
+  chambers: DoctorChamber[];
+  role: "doctor";
+  email_verified: boolean;
+  created_at: string;
+}
+
+export interface DoctorRegisterPayload {
+  title: DoctorTitle;
+  first_name: string;
+  last_name: string;
+  date_of_birth: string;
+  address: string;
+  country: string;
+  state: string;
+  district: string;
+  pin_code: string;
+  id_proof_type: DoctorIdProofType;
+  id_proof_number: string;
+  medical_degree: DoctorDegree;
+  medical_registration_number: string;
+  specialization: string;
+  consultation_type: DoctorConsultationType[];
+  availability: DoctorAvailability[];
+  chambers: DoctorChamber[];
+  email: string;
+  phone: string;
+  password: string;
+  confirm_password: string;
+  terms_accepted: boolean;
+}
+
+export interface DoctorLoginPayload {
+  email: string;
+  password: string;
+  remember_me: boolean;
+}
+
+export interface DoctorTokenResponse {
+  access_token: string;
+  token_type: "bearer";
+  doctor: DoctorProfile;
+}
+
+/** Metadata + data URL for the doctor's medical document proof. LOCAL ONLY —
+ * never sent to the backend, never part of DoctorRegisterPayload. */
+export interface DoctorDocumentRecord {
+  name: string;
+  type: string;
+  size: number;
+  dataUrl: string;
+}

@@ -32,11 +32,17 @@ async def connect_and_init_indexes() -> None:
     await db.patients.create_index([("email", ASCENDING)], unique=True, name="uniq_email")
     await db.patients.create_index([("patient_id", ASCENDING)], unique=True, name="uniq_patient_id")
 
+    # Doctor collection — same uniqueness guarantees as patients, so duplicate
+    # doctor emails are rejected at the database layer, not just in the API
+    # (see doctor_service.create_doctor's DuplicateKeyError handling).
+    await db.doctors.create_index([("email", ASCENDING)], unique=True, name="uniq_email")
+    await db.doctors.create_index([("doctor_id", ASCENDING)], unique=True, name="uniq_doctor_id")
+
     await db.otp_verifications.create_index([("email", ASCENDING), ("purpose", ASCENDING)], name="email_purpose")
     # TTL index: MongoDB auto-deletes the document once expires_at has passed.
     await db.otp_verifications.create_index([("expires_at", ASCENDING)], expireAfterSeconds=0, name="ttl_expiry")
 
-    logger.info("MongoDB indexes ensured on '%s'", settings.mongodb_database)
+    logger.info("MongoDB indexes ensured on '%s' (patients, doctors, otp_verifications)", settings.mongodb_database)
 
 
 async def close_connection() -> None:

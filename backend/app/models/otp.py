@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Literal
 from pydantic import BaseModel
 
-Purpose = Literal["register", "reset"]
+Purpose = Literal["register", "reset", "doctor_register", "doctor_reset"]
 
 
 class OtpDocument(BaseModel):

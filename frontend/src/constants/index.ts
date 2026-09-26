@@ -5,51 +5,27 @@ export const STORAGE_KEYS = {
   language: "medimitra_language",
   token: "medimitra_token",
   profileImage: "medimitra_profile_image",
+
+  // Doctor — namespaced keys so a doctor session/localStorage file can never
+  // collide with (or be overwritten by) a patient session in the same browser.
+  doctorToken: "medimitra_doctor_token",
+  doctorProfileImage: "medimitra_doctor_profile_image",
+  doctorMedicalDocument: "medimitra_doctor_medical_document",
 } as const;
 
 export const LANGUAGES: LanguageOption[] = [
-  {
-    code: "en",
-    label: "English",
-    nativeLabel: "English",
-  },
-  {
-    code: "bn",
-    label: "Bengali",
-    nativeLabel: "বাংলা",
-  },
-  {
-    code: "hi",
-    label: "Hindi",
-    nativeLabel: "हिन्दी",
-  },
+  { code: "en", label: "English", nativeLabel: "English" },
+  { code: "bn", label: "Bengali", nativeLabel: "বাংলা" },
+  { code: "hi", label: "Hindi", nativeLabel: "हिन्दी" },
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  {
-    key: "home",
-    href: "#home",
-  },
-  {
-    key: "about",
-    href: "#about",
-  },
-  {
-    key: "features",
-    href: "#features",
-  },
-  {
-    key: "howItWorks",
-    href: "#how-it-works",
-  },
-  {
-    key: "developers",
-    href: "#developers",
-  },
-  {
-    key: "contact",
-    href: "#contact",
-  },
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "features", href: "#features" },
+  { key: "howItWorks", href: "#how-it-works" },
+  { key: "developers", href: "#developers" },
+  { key: "contact", href: "#contact" },
 ];
 
 export const IMAGES = {
@@ -78,6 +54,8 @@ export const ROUTES = {
   doctor: {
     login: "/doctor/login",
     register: "/doctor/register",
+    verifyEmail: "/doctor/verify-email",
+    forgotPassword: "/doctor/forgot-password",
     dashboard: "/doctor/dashboard",
   },
 
@@ -124,18 +102,49 @@ export const DEVELOPER = {
 };
 
 export const ID_PROOF_OPTIONS = [
-  {
-    value: "aadhaar",
-    label: "Aadhaar Card",
-  },
-  {
-    value: "voter_id",
-    label: "Voter ID",
-  },
-  {
-    value: "driving_licence",
-    label: "Driving Licence",
-  },
+  { value: "aadhaar", label: "Aadhaar Card" },
+  { value: "voter_id", label: "Voter ID" },
+  { value: "driving_licence", label: "Driving Licence" },
 ] as const;
 
 export const TITLE_OPTIONS = ["Mr", "Mrs", "Miss"] as const;
+
+/* ---------------- Doctor registration option lists ---------------- */
+
+export const DEGREE_OPTIONS = ["MBBS", "BDS", "BAMS", "BHMS", "MD", "MS", "DM", "MCh", "Other"] as const;
+
+export const SPECIALIZATION_OPTIONS = [
+  "General Physician",
+  "Cardiologist",
+  "Dermatologist",
+  "Neurologist",
+  "Pediatrician",
+  "Orthopedic",
+  "Gynecologist",
+  "ENT",
+  "Psychiatrist",
+  "Dentist",
+  "Ophthalmologist",
+  "Gastroenterologist",
+  "Urologist",
+  "Oncologist",
+  "Pulmonologist",
+  "Endocrinologist",
+  "Other",
+] as const;
+
+export const CONSULTATION_TYPE_OPTIONS = [
+  { value: "in_person", label: "In-person" },
+  { value: "online", label: "Online" },
+  { value: "both", label: "Both" },
+] as const;
+
+export const DAYS_OF_WEEK = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+] as const;

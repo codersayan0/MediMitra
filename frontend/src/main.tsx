@@ -6,6 +6,7 @@ import "@/styles/layout.css";
 import "@/styles/sections.css";
 import "@/styles/placeholder.css";
 import "@/styles/auth.css";
+import "@/styles/doctor.css";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {

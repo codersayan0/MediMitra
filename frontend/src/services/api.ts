@@ -5,12 +5,17 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localho
 
 interface RequestOptions extends RequestInit {
   auth?: boolean;
+  /** Which localStorage key to read the bearer token from when auth=true.
+   * Defaults to the patient token key. doctorAuth.service.ts passes
+   * STORAGE_KEYS.doctorToken so a doctor session is never confused with a
+   * patient session in the same browser. */
+  tokenKey?: string;
 }
 
 /** Thin fetch wrapper — every service call goes through here, never fetch() directly. */
 export async function apiRequest<T>(
   path: string,
-  { auth = false, headers, ...options }: RequestOptions = {}
+  { auth = false, tokenKey, headers, ...options }: RequestOptions = {}
 ): Promise<ApiResponse<T>> {
   const requestHeaders: HeadersInit = {
     "Content-Type": "application/json",
@@ -18,7 +23,7 @@ export async function apiRequest<T>(
   };
 
   if (auth) {
-    const token = window.localStorage.getItem(STORAGE_KEYS.token);
+    const token = window.localStorage.getItem(tokenKey ?? STORAGE_KEYS.token);
     if (token) {
       (requestHeaders as Record<string, string>).Authorization = `Bearer ${token}`;
     }
