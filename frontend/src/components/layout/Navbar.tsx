@@ -5,6 +5,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -28,15 +29,14 @@ export function Navbar() {
   };
 
   /**
-   * Section anchors (#about, #features, etc.) only exist on
-   * the landing page.
+   * Section anchors (#about, #features, etc.) only exist
+   * on the landing page.
    *
    * If already on the homepage:
-   *   → smoothly scroll to the section.
+   * → smoothly scroll to the section.
    *
    * If on another page:
-   *   → navigate to homepage and pass the target section
-   *      through router state.
+   * → navigate to homepage with the real URL hash.
    */
   const handleSectionLink = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -56,11 +56,7 @@ export function Navbar() {
       return;
     }
 
-    navigate(ROUTES.home, {
-      state: {
-        scrollTo: hash,
-      },
-    });
+    navigate(`${ROUTES.home}${hash}`);
   };
 
   /**
@@ -97,12 +93,10 @@ export function Navbar() {
           aria-label="MediMitra home"
           onClick={handleLogoClick}
         >
-          <span
+          <Logo
+            size={30}
             className="navbar__logo-icon"
-            aria-hidden="true"
-          >
-            +
-          </span>
+          />
 
           <span className="navbar__logo-text">
             MediMitra

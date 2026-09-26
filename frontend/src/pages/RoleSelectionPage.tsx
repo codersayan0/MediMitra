@@ -4,6 +4,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { useTheme } from "@/hooks/useTheme";
 import { useReveal } from "@/hooks/useReveal";
 import { Button } from "@/components/ui/Button";
+import { RoleIcon, TrustIcon } from "@/components/ui/RoleIcon";
 import { IMAGES, ROLE_OPTIONS } from "@/constants";
 import type { UserRole } from "@/types";
 
@@ -32,15 +33,19 @@ export function RoleSelectionPage() {
     admin: t.roleSelection.admin,
   };
 
-  const trustItems = [
-    { icon: "🛡️", title: t.roleSelection.trust.secureTitle, desc: t.roleSelection.trust.secureDesc },
-    { icon: "🤖", title: t.roleSelection.trust.aiTitle, desc: t.roleSelection.trust.aiDesc },
-    { icon: "🌐", title: t.roleSelection.trust.languageTitle, desc: t.roleSelection.trust.languageDesc },
-    { icon: "⭐", title: t.roleSelection.trust.trustedTitle, desc: t.roleSelection.trust.trustedDesc },
+  const trustItems: { key: "secure" | "ai" | "language" | "trust"; title: string; desc: string }[] = [
+    { key: "secure", title: t.roleSelection.trust.secureTitle, desc: t.roleSelection.trust.secureDesc },
+    { key: "ai", title: t.roleSelection.trust.aiTitle, desc: t.roleSelection.trust.aiDesc },
+    { key: "language", title: t.roleSelection.trust.languageTitle, desc: t.roleSelection.trust.languageDesc },
+    { key: "trust", title: t.roleSelection.trust.trustedTitle, desc: t.roleSelection.trust.trustedDesc },
   ];
 
   return (
     <div className="role-select">
+      <span className="role-select__ambient role-select__ambient--a" aria-hidden="true" />
+      <span className="role-select__ambient role-select__ambient--b" aria-hidden="true" />
+      <span className="role-select__ambient role-select__ambient--c" aria-hidden="true" />
+
       {/* Hero */}
       <section className="role-select__hero">
         <div className="container role-select__hero-inner">
@@ -90,8 +95,9 @@ export function RoleSelectionPage() {
 
               return (
                 <article className="role-select-card" key={option.role} style={cardStyle}>
-                  <div className="role-select-card__icon" aria-hidden="true">
-                    {option.icon}
+                  <span className="role-select-card__glow" aria-hidden="true" />
+                  <div className="role-select-card__icon">
+                    <RoleIcon role={option.role} size={26} />
                   </div>
                   <h2 className="role-select-card__title">{copy.title}</h2>
                   <p className="role-select-card__desc">{copy.desc}</p>
@@ -99,7 +105,17 @@ export function RoleSelectionPage() {
                   <ul className="role-select-card__features">
                     {copy.features.map((feature) => (
                       <li key={feature}>
-                        <span aria-hidden="true">✓</span>
+                        <span className="role-select-card__check" aria-hidden="true">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M4.5 12.5l5 5 10-11"
+                              stroke="#fff"
+                              strokeWidth="2.6"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
                         {feature}
                       </li>
                     ))}
@@ -119,9 +135,9 @@ export function RoleSelectionPage() {
       <section className="role-select__trust">
         <div className="container role-select__trust-grid reveal" ref={trustRef}>
           {trustItems.map((item) => (
-            <div className="role-select__trust-item" key={item.title}>
+            <div className="role-select__trust-item" key={item.key}>
               <span className="role-select__trust-icon" aria-hidden="true">
-                {item.icon}
+                <TrustIcon trustKey={item.key} size={19} />
               </span>
               <div>
                 <strong>{item.title}</strong>

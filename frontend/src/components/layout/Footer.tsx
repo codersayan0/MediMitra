@@ -1,4 +1,3 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { NAV_LINKS, ROUTES, DEVELOPER } from "@/constants";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Logo } from "@/components/ui/Logo";
@@ -22,7 +21,7 @@ export function Footer() {
         <div className="footer__grid">
           <div>
             <div className="footer__brand">
-              <span aria-hidden="true">+</span> MediMitra
+              <Logo size={26} /> MediMitra
             </div>
             <p className="footer__desc">{t.footer.desc}</p>
           </div>

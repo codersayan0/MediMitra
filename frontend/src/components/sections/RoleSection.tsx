@@ -3,6 +3,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { useReveal } from "@/hooks/useReveal";
 import { ROLE_OPTIONS } from "@/constants";
 import { Button } from "@/components/ui/Button";
+import { RoleIcon } from "@/components/ui/RoleIcon";
 
 export function RoleSection() {
   const { t } = useLanguage();
@@ -33,9 +34,8 @@ export function RoleSection() {
                   <span
                     className="role-card__avatar"
                     style={{ background: option.colorVar }}
-                    aria-hidden="true"
                   >
-                    {option.icon}
+                    <RoleIcon role={option.role} size={22} />
                   </span>
                   <h3 className="role-card__title">{info.title}</h3>
                 </div>
