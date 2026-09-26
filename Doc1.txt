@@ -1,0 +1,41 @@
+i want to create this project name MediMitra project has support three language (English, Bengali, hindi) each page and theame hase two mode light and dark ui/ux must be professional and attracting and file structure should be professional and make the project production level 
+
+ frontend:- HTML CSS TS JS React backend :- python , Rag, LLLM, fastapi, oci for  data base mongodb, Email otp verification Email js , venv , JWT, gemini api etc for deploy vercel and render
+
+1. there is a index page/home page:- write everything about the project , developer details (GitHub, linkedin, portfolio ) and there will two button login and get strated
+2. click any button login/ get started open a page threre write three section patient, doctor, Admin
+3. if click patient 
+   1. open a patient login page using email id and password and login with google or microshoft and forget password, and if not create one account button 
+   2. if click create one account
+      1. open patient registration page attribute:- mr/miss/miss ,  first name, last name, DOB, address, select country, select state, select district, pin code,   Adhar or Voter card or                         driving license no, email id, phone no, create password (strong week check), confirm password , tarm and condition check box, image (optional and must be store in local storage not send mongodb database)  
+       2. open email otp verification page using emailjs
+       3. open patient dashboard
+       4. if account already has in same email id no create new account
+   3. if login using email id password (if account previously created)
+      1. open patient dashboard
+   4. if click forget password 
+      1. send a otp in the maintion email id and after otp verification
+      2. create password and confurm password 
+      3. old password is updated with new password if previostly account has
+   5. patient dashboard show but there only write coming soon because i implement it later 
+4. if click doctor
+   1. open a doctor login page using email id and password and login with google or microshoft and forget password, and if not create one account button 
+   2. if click create one account
+      1. open doctor registration page attribute:- dr ,  first name, last name, DOB, address, select country, select state, select district, pin code,   Adhar or Voter card or                         driving license no, medical digree details, medical pass registration number, upload medical document proof ( must be store in local storage), consult type, time, which days open, chember locations/address doctor specilazation,  email id, phone no, create password (strong week check), confirm password , tarm and condition check box, image (optional and must be store in local storage not send mongodb database)  or any other details need
+       2. open email otp verification page using emailjs
+       3. open doctor dashboard
+       4. if account already has in same email id no create new account
+   3. if login using email id password (if account previously created)
+      1. open doctor dashboard
+   4. if click forget password 
+      1. send a otp in the maintion email id and after otp verification
+      2. create password and confurm password 
+      3. old password is updated with new password if previostly account has
+   5. doctor dashboard show but there only write coming soon because i implement it later
+5. if click administrative
+   1. open login page 
+   2. admin login id password previosly saved in env file
+   3. if match open admin dashboard
+   4. Administative dashboard show but there only write coming soon because i implement it later
+  
+i want to build it step by step only analysis the whole and give me your idea only

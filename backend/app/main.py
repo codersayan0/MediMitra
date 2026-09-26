@@ -12,6 +12,7 @@ from app.api.routes import health as health_routes
 from app.core.config import get_settings
 from app.core.database import close_connection, connect_and_init_indexes
 from app.schemas.common import ApiResponse
+from app.api.routes import patient as patient_routes
 
 logging.basicConfig(level=logging.INFO)
 settings = get_settings()
@@ -55,6 +56,7 @@ app.include_router(health_routes.router, prefix="/api")
 app.include_router(auth_routes.router, prefix="/api")
 app.include_router(doctor_auth_routes.router, prefix="/api")
 app.include_router(admin_auth_routes.router, prefix="/api")
+app.include_router(patient_routes.router, prefix="/api")
 
 
 @app.post("/api/auth/logout", response_model=ApiResponse[dict])

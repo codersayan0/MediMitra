@@ -1,0 +1,1085 @@
+/* =========================================================
+   MediMitra — Patient Login
+   Premium healthcare login experience
+   Light + Dark theme
+   ========================================================= */
+
+.patient-login {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(14, 165, 233, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(20, 184, 166, 0.1),
+      transparent 28%
+    ),
+    var(--background);
+  isolation: isolate;
+}
+
+[data-theme="dark"] .patient-login {
+  background:
+    radial-gradient(
+      circle at 8% 18%,
+      rgba(14, 165, 233, 0.17),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(20, 184, 166, 0.14),
+      transparent 30%
+    ),
+    #050914;
+}
+
+/* ---------------------------------------------------------
+   Ambient background
+   --------------------------------------------------------- */
+
+.patient-login__ambient {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+.patient-login__ambient--one {
+  width: 360px;
+  height: 360px;
+  left: -180px;
+  top: 120px;
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.patient-login__ambient--two {
+  width: 420px;
+  height: 420px;
+  right: -220px;
+  bottom: -120px;
+  background: rgba(20, 184, 166, 0.1);
+}
+
+.patient-login__ambient--three {
+  width: 180px;
+  height: 180px;
+  right: 30%;
+  top: 8%;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+/* ---------------------------------------------------------
+   Main layout
+   --------------------------------------------------------- */
+
+.patient-login__container {
+  width: min(1240px, calc(100% - 48px));
+  min-height: calc(100vh - 72px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 500px);
+  align-items: center;
+  gap: 64px;
+  padding: 52px 0;
+}
+
+/* ---------------------------------------------------------
+   Hero
+   --------------------------------------------------------- */
+
+.patient-login__hero {
+  position: relative;
+  min-width: 0;
+  padding: 20px 0;
+}
+
+.patient-login__eyebrow {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px 8px 9px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="dark"] .patient-login__eyebrow {
+  background: rgba(13, 21, 38, 0.7);
+  border-color: rgba(14, 165, 233, 0.35);
+  color: #67e8f9;
+}
+
+.patient-login__eyebrow-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--gradient-primary);
+}
+
+.patient-login__eyebrow-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.patient-login__hero-title {
+  max-width: 620px;
+  margin: 24px 0 14px;
+  color: var(--text-primary);
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 0.98;
+  letter-spacing: -2.8px;
+  font-weight: 850;
+}
+
+.patient-login__hero-title span {
+  display: block;
+  margin-top: 8px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.patient-login__hero-text {
+  max-width: 540px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   Benefits
+   --------------------------------------------------------- */
+
+.patient-login__benefits {
+  max-width: 530px;
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.patient-login__benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+[data-theme="dark"] .patient-login__benefit {
+  background: rgba(13, 21, 38, 0.68);
+  border-color: rgba(71, 85, 105, 0.38);
+}
+
+.patient-login__benefit:hover {
+  transform: translateX(5px);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.patient-login__benefit-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+
+.patient-login__benefit-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.patient-login__benefit-icon--green {
+  color: #059669;
+  background: rgba(16, 185, 129, 0.13);
+}
+
+.patient-login__benefit-icon--purple {
+  color: #7c3aed;
+  background: rgba(139, 92, 246, 0.13);
+}
+
+.patient-login__benefit-icon--blue {
+  color: #0284c7;
+  background: rgba(14, 165, 233, 0.13);
+}
+
+.patient-login__benefit div {
+  display: grid;
+  gap: 3px;
+}
+
+.patient-login__benefit strong {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.patient-login__benefit span:not(.patient-login__benefit-icon) {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------
+   Healthcare illustration
+   --------------------------------------------------------- */
+
+.patient-login__visual {
+  position: relative;
+  width: min(100%, 500px);
+  height: 255px;
+  margin-top: 12px;
+}
+
+.patient-login__visual-ring {
+  position: absolute;
+  left: 55px;
+  bottom: 15px;
+  width: 310px;
+  height: 130px;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+.patient-login__visual-ring--two {
+  left: 95px;
+  bottom: 28px;
+  width: 250px;
+  border-color: rgba(20, 184, 166, 0.28);
+  transform: rotate(18deg);
+}
+
+.patient-login__person {
+  position: absolute;
+  left: 160px;
+  bottom: 0;
+  width: 150px;
+  height: 230px;
+}
+
+.patient-login__person-hair {
+  position: absolute;
+  top: 5px;
+  left: 35px;
+  width: 82px;
+  height: 96px;
+  border-radius: 48% 52% 42% 44%;
+  background: linear-gradient(
+    135deg,
+    #172554,
+    #312e81 60%,
+    #4c1d95
+  );
+  z-index: 2;
+}
+
+.patient-login__person-face {
+  position: absolute;
+  top: 31px;
+  left: 49px;
+  width: 60px;
+  height: 72px;
+  border-radius: 45% 45% 48% 48%;
+  background: #f7c9a9;
+  z-index: 3;
+}
+
+.patient-login__eye {
+  position: absolute;
+  top: 31px;
+  width: 5px;
+  height: 6px;
+  border-radius: 50%;
+  background: #172033;
+}
+
+.patient-login__eye--left {
+  left: 18px;
+}
+
+.patient-login__eye--right {
+  right: 18px;
+}
+
+.patient-login__smile {
+  position: absolute;
+  left: 23px;
+  top: 47px;
+  width: 15px;
+  height: 7px;
+  border-bottom: 2px solid #be5b66;
+  border-radius: 50%;
+}
+
+.patient-login__person-body {
+  position: absolute;
+  bottom: 0;
+  left: 21px;
+  width: 108px;
+  height: 120px;
+  border-radius: 50px 50px 15px 15px;
+  background: linear-gradient(
+    145deg,
+    #0ea5e9,
+    #14b8a6
+  );
+}
+
+.patient-login__person-heart {
+  position: absolute;
+  top: 25px;
+  left: 39px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.patient-login__person-heart svg {
+  width: 17px;
+  height: 17px;
+}
+
+.patient-login__phone {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  width: 47px;
+  height: 80px;
+  padding: 5px;
+  border: 3px solid #172033;
+  border-radius: 10px;
+  background: #f8fafc;
+  transform: rotate(11deg);
+  z-index: 5;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.22);
+}
+
+.patient-login__phone-screen {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #dff8ff, #dff7ef);
+}
+
+.patient-login__phone-screen span {
+  height: 4px;
+  border-radius: 999px;
+  background: #0ea5e9;
+}
+
+.patient-login__phone-screen span:nth-child(2) {
+  width: 75%;
+  background: #14b8a6;
+}
+
+.patient-login__phone-screen span:nth-child(3) {
+  width: 55%;
+  background: #8b5cf6;
+}
+
+.patient-login__float {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.13);
+  animation: patientLoginFloat 4s ease-in-out infinite;
+}
+
+.patient-login__float svg {
+  width: 23px;
+  height: 23px;
+}
+
+.patient-login__float--heart {
+  left: 50px;
+  top: 45px;
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.13);
+}
+
+.patient-login__float--shield {
+  right: 65px;
+  top: 20px;
+  color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.13);
+  animation-delay: 0.7s;
+}
+
+.patient-login__float--sparkle {
+  right: 25px;
+  bottom: 32px;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.13);
+  animation-delay: 1.2s;
+}
+
+@keyframes patientLoginFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ---------------------------------------------------------
+   Stats
+   --------------------------------------------------------- */
+
+.patient-login__stats {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  margin-top: 4px;
+}
+
+.patient-login__stats div {
+  display: grid;
+  gap: 2px;
+}
+
+.patient-login__stats strong {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.patient-login__stats span {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* ---------------------------------------------------------
+   Login card
+   --------------------------------------------------------- */
+
+.patient-login__card {
+  position: relative;
+  width: 100%;
+  padding: 34px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.12),
+    0 8px 25px rgba(14, 165, 233, 0.05);
+}
+
+[data-theme="dark"] .patient-login__card {
+  border-color: rgba(71, 85, 105, 0.5);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 21, 38, 0.96),
+      rgba(8, 17, 34, 0.91)
+    );
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.48),
+    0 0 50px rgba(14, 165, 233, 0.06);
+}
+
+.patient-login__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14%;
+  right: 14%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gradient-primary);
+}
+
+/* ---------------------------------------------------------
+   Card heading
+   --------------------------------------------------------- */
+
+.patient-login__card-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-size: 19px;
+  font-weight: 850;
+}
+
+.patient-login__heading {
+  text-align: center;
+}
+
+.patient-login__heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  font-weight: 850;
+}
+
+.patient-login__heading h2 span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.patient-login__heading p {
+  margin: 9px 0 0;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   Security notice
+   --------------------------------------------------------- */
+
+.patient-login__security {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 22px;
+  padding: 11px 13px;
+  border: 1px solid rgba(14, 165, 233, 0.14);
+  border-radius: 14px;
+  background: rgba(14, 165, 233, 0.06);
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+[data-theme="dark"] .patient-login__security {
+  background: rgba(14, 165, 233, 0.07);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+.patient-login__security-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.13);
+}
+
+.patient-login__security-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------------------------------------------------------
+   Form
+   --------------------------------------------------------- */
+
+.patient-login__form {
+  display: grid;
+  gap: 17px;
+}
+
+.patient-login__field {
+  display: grid;
+  gap: 7px;
+}
+
+.patient-login__field label {
+  color: var(--text-primary);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.patient-login__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.patient-login__input-wrap > svg {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.patient-login__input-wrap input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+  outline: none;
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 13.5px;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.patient-login__input-wrap input::placeholder {
+  color: var(--text-muted);
+}
+
+.patient-login__input-wrap input:hover {
+  border-color: rgba(14, 165, 233, 0.45);
+}
+
+.patient-login__input-wrap input:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+}
+
+.patient-login__password-toggle {
+  position: absolute;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.patient-login__password-toggle:hover {
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.patient-login__password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------------------------------------------------------
+   Options
+   --------------------------------------------------------- */
+
+.patient-login__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.patient-login__remember {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.patient-login__remember input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.patient-login__checkmark {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 5px;
+  color: white;
+  background: transparent;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.patient-login__checkmark svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0;
+}
+
+.patient-login__remember input:checked + .patient-login__checkmark {
+  border-color: var(--primary);
+  background: var(--gradient-primary);
+}
+
+.patient-login__remember input:checked + .patient-login__checkmark svg {
+  opacity: 1;
+}
+
+.patient-login__remember input:focus-visible + .patient-login__checkmark {
+  outline: 3px solid rgba(14, 165, 233, 0.2);
+}
+
+.patient-login__forgot {
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.patient-login__forgot:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   Messages
+   --------------------------------------------------------- */
+
+.patient-login__message {
+  margin: -2px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.patient-login__message--error {
+  color: var(--danger);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  background: rgba(220, 38, 38, 0.07);
+}
+
+.patient-login__message--notice {
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  background: var(--surface-secondary);
+}
+
+/* ---------------------------------------------------------
+   Submit
+   --------------------------------------------------------- */
+
+.patient-login__submit {
+  min-height: 52px;
+  border-radius: 999px !important;
+  background: var(--gradient-primary) !important;
+  box-shadow:
+    0 12px 28px rgba(14, 165, 233, 0.2),
+    0 5px 14px rgba(20, 184, 166, 0.13);
+  font-weight: 800;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.patient-login__submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 34px rgba(14, 165, 233, 0.26),
+    0 7px 18px rgba(20, 184, 166, 0.17);
+}
+
+.patient-login__submit > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.patient-login__submit svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------------------------------------------------------
+   Divider
+   --------------------------------------------------------- */
+
+.patient-login__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.patient-login__divider::before,
+.patient-login__divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+/* ---------------------------------------------------------
+   OAuth
+   --------------------------------------------------------- */
+
+.patient-login__oauth {
+  display: grid;
+  gap: 10px;
+}
+
+.patient-login__oauth-button {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.patient-login__oauth-button:hover {
+  background: var(--surface-secondary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.patient-login__oauth-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ---------------------------------------------------------
+   Register
+   --------------------------------------------------------- */
+
+.patient-login__register {
+  margin: 1px 0 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+}
+
+.patient-login__register a {
+  color: var(--primary);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.patient-login__register a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+.patient-login__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 21px;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 10.5px;
+  text-align: center;
+}
+
+.patient-login__footer-lock {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+.patient-login__footer-lock svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .patient-login__container {
+    grid-template-columns: minmax(0, 0.9fr) minmax(400px, 470px);
+    gap: 38px;
+  }
+
+  .patient-login__hero-title {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+
+  .patient-login__visual {
+    transform: scale(0.9);
+    transform-origin: left bottom;
+  }
+}
+
+@media (max-width: 860px) {
+  .patient-login__container {
+    width: min(600px, calc(100% - 32px));
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 34px 0 50px;
+  }
+
+  .patient-login__hero {
+    text-align: center;
+  }
+
+  .patient-login__eyebrow {
+    margin: 0 auto;
+  }
+
+  .patient-login__hero-title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(40px, 10vw, 58px);
+  }
+
+  .patient-login__hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .patient-login__benefits {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .patient-login__visual {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .patient-login__stats {
+    justify-content: center;
+  }
+
+  .patient-login__card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .patient-login__container {
+    width: min(100% - 22px, 500px);
+    padding-top: 22px;
+  }
+
+  .patient-login__hero-title {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  .patient-login__hero-text {
+    font-size: 14px;
+  }
+
+  .patient-login__benefit {
+    padding: 11px 12px;
+  }
+
+  .patient-login__visual {
+    height: 215px;
+    transform: scale(0.8);
+    transform-origin: center bottom;
+    margin-top: -12px;
+    margin-bottom: -25px;
+  }
+
+  .patient-login__stats {
+    gap: 20px;
+  }
+
+  .patient-login__stats strong {
+    font-size: 15px;
+  }
+
+  .patient-login__stats span {
+    font-size: 9.5px;
+  }
+
+  .patient-login__card {
+    padding: 27px 19px;
+    border-radius: 24px;
+  }
+
+  .patient-login__heading h2 {
+    font-size: 27px;
+  }
+
+  .patient-login__options {
+    font-size: 11.5px;
+  }
+
+  .patient-login__forgot {
+    font-size: 11.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-login__float {
+    animation: none;
+  }
+
+  .patient-login__benefit,
+  .patient-login__submit,
+  .patient-login__oauth-button {
+    transition: none;
+  }
+}
