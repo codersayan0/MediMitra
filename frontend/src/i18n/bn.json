@@ -257,12 +257,57 @@
       "updating": "আপডেট হচ্ছে..."
     },
     "dashboard": {
-      "welcome": "MediMitra-তে স্বাগতম",
-      "title": "রোগী ড্যাশবোর্ড",
-      "comingSoon": "শীঘ্রই আসছে",
-      "desc": "আপনার ব্যক্তিগত স্বাস্থ্যসেবা অভিজ্ঞতা প্রস্তুত করা হচ্ছে। পরবর্তী ধাপে আরও বৈশিষ্ট্য উপলব্ধ হবে।",
-      "logout": "লগআউট"
-    }
+  "welcome": "আবার স্বাগতম",
+  "manageHealthcare": "এক জায়গা থেকে আপনার স্বাস্থ্য সংক্রান্ত তথ্য পরিচালনা করুন।",
+
+  "patientIdLabel": "আপনার MEDIMITRA রোগী আইডি",
+  "secureAccount": "নিরাপদ রোগী অ্যাকাউন্ট",
+
+  "healthInsights": "স্বাস্থ্য সংক্রান্ত তথ্য",
+  "notAvailableYet": "এখনও উপলব্ধ নয়",
+  "healthDataAnalysis": "স্বাস্থ্য তথ্য বিশ্লেষণের পরে উপলব্ধ হবে",
+
+  "medicalReports": "মেডিকেল রিপোর্ট",
+  "reportsCount": "এখনও কোনো রিপোর্ট আপলোড করা হয়নি",
+
+  "healthCases": "স্বাস্থ্য সমস্যা",
+  "healthCasesCount": "এখনও কোনো AI স্বাস্থ্য সমস্যা নেই",
+
+  "documents": "নথিপত্র",
+  "documentsCount": "এখনও কোনো নথি যোগ করা হয়নি",
+
+  "patientInformation": "রোগীর তথ্য",
+  "viewProfile": "প্রোফাইল দেখুন",
+
+  "emailVerification": "ইমেল যাচাইকরণ",
+  "verified": "যাচাইকৃত",
+
+  "aiHealthcare": "AI স্বাস্থ্যসেবা",
+  "aiAssistant": "AI সহায়ক",
+  "aiAssistantDescription": "আপনার MediMitra AI সহায়ক আপনাকে স্বাস্থ্য তথ্য, রিপোর্ট বুঝতে এবং ডাক্তারের জন্য প্রশ্ন প্রস্তুত করতে সাহায্য করবে.",
+  "aiChat": "AI চ্যাট",
+  "reportAnalysis": "রিপোর্ট বিশ্লেষণ",
+  "healthInsightsButton": "স্বাস্থ্য তথ্য",
+  "exploreAiAssistant": "AI সহায়ক দেখুন",
+
+  "quickActions": "দ্রুত কার্যক্রম",
+
+  "newHealthCase": "নতুন স্বাস্থ্য সমস্যা",
+  "startAiInterview": "AI স্বাস্থ্য সাক্ষাৎকার শুরু করুন",
+
+  "uploadReport": "রিপোর্ট আপলোড করুন",
+  "addMedicalReport": "মেডিকেল রিপোর্ট যোগ করুন",
+
+  "previousHistory": "পূর্ববর্তী ইতিহাস",
+  "viewHealthHistory": "আপনার স্বাস্থ্য ইতিহাস দেখুন",
+
+  "askHealthcareQuestion": "স্বাস্থ্য সম্পর্কিত প্রশ্ন করুন",
+
+  "doctorAppointment": "ডাক্তারের অ্যাপয়েন্টমেন্ট",
+  "comingSoon": "শীঘ্রই আসছে",
+
+  "logout": "লগআউট"
+}
   },
   "doctorAuth": {
     "login": {

@@ -257,12 +257,57 @@
       "updating": "Updating..."
     },
     "dashboard": {
-      "welcome": "Welcome to MediMitra",
-      "title": "Patient Dashboard",
-      "comingSoon": "Coming Soon",
-      "desc": "Your personalized healthcare experience is being prepared. More features will be available in the next phase.",
-      "logout": "Logout"
-    }
+  "welcome": "Welcome back",
+  "manageHealthcare": "Manage your healthcare information from one place.",
+
+  "patientIdLabel": "YOUR MEDIMITRA PATIENT ID",
+  "secureAccount": "Secure Patient Account",
+
+  "healthInsights": "Health Insights",
+  "notAvailableYet": "Not available yet",
+  "healthDataAnalysis": "Available after health data analysis",
+
+  "medicalReports": "Medical Reports",
+  "reportsCount": "No reports uploaded yet",
+
+  "healthCases": "Health Cases",
+  "healthCasesCount": "No AI health cases yet",
+
+  "documents": "Documents",
+  "documentsCount": "No documents added yet",
+
+  "patientInformation": "Patient Information",
+  "viewProfile": "View Profile",
+
+  "emailVerification": "Email verification",
+  "verified": "Verified",
+
+  "aiHealthcare": "AI HEALTHCARE",
+  "aiAssistant": "AI Assistant",
+  "aiAssistantDescription": "Your MediMitra AI Assistant will help you understand health information, reports and prepare questions for your doctor.",
+  "aiChat": "AI Chat",
+  "reportAnalysis": "Report Analysis",
+  "healthInsightsButton": "Health Insights",
+  "exploreAiAssistant": "Explore AI Assistant",
+
+  "quickActions": "Quick Actions",
+
+  "newHealthCase": "New Health Case",
+  "startAiInterview": "Start an AI health interview",
+
+  "uploadReport": "Upload Report",
+  "addMedicalReport": "Add a medical report",
+
+  "previousHistory": "Previous History",
+  "viewHealthHistory": "View your health history",
+
+  "askHealthcareQuestion": "Ask a healthcare question",
+
+  "doctorAppointment": "Doctor Appointment",
+  "comingSoon": "Coming Soon",
+
+  "logout": "Logout"
+}
   },
   "doctorAuth": {
     "login": {
@@ -348,6 +393,7 @@
       "updatePassword": "Update Password",
       "updating": "Updating..."
     },
+    
     "dashboard": {
       "welcome": "Welcome to MediMitra",
       "title": "Doctor Dashboard",

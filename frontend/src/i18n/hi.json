@@ -257,12 +257,57 @@
       "updating": "अपडेट हो रहा है..."
     },
     "dashboard": {
-      "welcome": "MediMitra में आपका स्वागत है",
-      "title": "रोगी डैशबोर्ड",
-      "comingSoon": "जल्द आ रहा है",
-      "desc": "आपका व्यक्तिगत स्वास्थ्य अनुभव तैयार किया जा रहा है। अगले चरण में और सुविधाएं उपलब्ध होंगी।",
-      "logout": "लॉगआउट"
-    }
+  "welcome": "वापसी पर स्वागत है",
+  "manageHealthcare": "अपनी स्वास्थ्य संबंधी जानकारी एक ही स्थान से प्रबंधित करें।",
+
+  "patientIdLabel": "आपकी MEDIMITRA रोगी आईडी",
+  "secureAccount": "सुरक्षित रोगी खाता",
+
+  "healthInsights": "स्वास्थ्य जानकारी",
+  "notAvailableYet": "अभी उपलब्ध नहीं है",
+  "healthDataAnalysis": "स्वास्थ्य डेटा विश्लेषण के बाद उपलब्ध होगा",
+
+  "medicalReports": "मेडिकल रिपोर्ट",
+  "reportsCount": "अभी तक कोई रिपोर्ट अपलोड नहीं की गई है",
+
+  "healthCases": "स्वास्थ्य मामले",
+  "healthCasesCount": "अभी तक कोई AI स्वास्थ्य मामला नहीं है",
+
+  "documents": "दस्तावेज़",
+  "documentsCount": "अभी तक कोई दस्तावेज़ नहीं जोड़ा गया है",
+
+  "patientInformation": "रोगी की जानकारी",
+  "viewProfile": "प्रोफ़ाइल देखें",
+
+  "emailVerification": "ईमेल सत्यापन",
+  "verified": "सत्यापित",
+
+  "aiHealthcare": "AI स्वास्थ्य सहायता",
+  "aiAssistant": "AI सहायक",
+  "aiAssistantDescription": "आपका MediMitra AI सहायक आपको स्वास्थ्य जानकारी और रिपोर्ट समझने तथा डॉक्टर के लिए प्रश्न तैयार करने में मदद करेगा।",
+  "aiChat": "AI चैट",
+  "reportAnalysis": "रिपोर्ट विश्लेषण",
+  "healthInsightsButton": "स्वास्थ्य जानकारी",
+  "exploreAiAssistant": "AI सहायक देखें",
+
+  "quickActions": "त्वरित कार्य",
+
+  "newHealthCase": "नया स्वास्थ्य मामला",
+  "startAiInterview": "AI स्वास्थ्य साक्षात्कार शुरू करें",
+
+  "uploadReport": "रिपोर्ट अपलोड करें",
+  "addMedicalReport": "मेडिकल रिपोर्ट जोड़ें",
+
+  "previousHistory": "पिछला इतिहास",
+  "viewHealthHistory": "अपना स्वास्थ्य इतिहास देखें",
+
+  "askHealthcareQuestion": "स्वास्थ्य संबंधी प्रश्न पूछें",
+
+  "doctorAppointment": "डॉक्टर अपॉइंटमेंट",
+  "comingSoon": "जल्द आ रहा है",
+
+  "logout": "लॉगआउट"
+}
   },
   "doctorAuth": {
     "login": {
