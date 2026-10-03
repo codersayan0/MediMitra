@@ -1,0 +1,1 @@
+import {useLanguage} from "@/hooks/useLanguage";import {patientDictionaries} from "@/i18n/patient";export function usePatientI18n(){const{language}=useLanguage();return{language,t:patientDictionaries[language]};}

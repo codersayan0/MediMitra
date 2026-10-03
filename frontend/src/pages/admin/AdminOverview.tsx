@@ -1,0 +1,8 @@
+import { Link } from 'react-router-dom';
+import { AdminIcon } from '@/components/admin/AdminIcon';
+import { AccountTable } from '@/components/admin/AccountTable';
+import { useAdminData } from '@/contexts/AdminDataContext';
+import { useAdminDashboardI18n } from '@/hooks/useAdminDashboardI18n';
+
+export function AdminOverview(){const t=useAdminDashboardI18n();const d=useAdminData();return <div className="admin-page"><div className="admin-welcome"><div><span className="admin-eyebrow">{t.brand} • {t.role}</span><h1>{t.welcome} <span>👋</span></h1><p>{t.subtitle}</p></div><div className="admin-date"><AdminIcon name="dashboard"/><div><strong>03 Oct 2026</strong><span>Admin Portal</span></div></div></div><div className="admin-stat-grid"><Stat icon="patients" cls="blue" value={d.patients.length} label={t.totalPatients} desc={t.registeredPatients}/><Stat icon="doctors" cls="green" value={d.doctors.length} label={t.totalDoctors} desc={t.registeredDoctors}/><Stat icon="users" cls="purple" value={d.patients.length+d.doctors.length} label={t.totalUsers} desc={t.allUsers}/><Stat icon="trash" cls="red" value={d.removedCount} label={t.removed} desc={t.removedByAdmin}/></div><AccountTable kind="patient" rows={d.patients} onRemove={d.removePatient}/><AccountTable kind="doctor" rows={d.doctors} onRemove={d.removeDoctor}/></div>}
+function Stat({icon,cls,value,label,desc}:{icon:string;cls:string;value:number;label:string;desc:string}){return <div className={`admin-stat ${cls}`}><div className="admin-stat-icon"><AdminIcon name={icon} size={23}/></div><div><strong>{value.toLocaleString()}</strong><h3>{label}</h3><p>{desc}</p></div></div>}

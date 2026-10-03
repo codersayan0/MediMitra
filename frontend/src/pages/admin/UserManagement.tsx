@@ -1,0 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AdminIcon } from '@/components/admin/AdminIcon';
+import { useAdminData } from '@/contexts/AdminDataContext';
+import { useAdminDashboardI18n } from '@/hooks/useAdminDashboardI18n';
+export function UserManagement(){const t=useAdminDashboardI18n();const d=useAdminData();return <div className="admin-page"><div className="admin-section-title"><span className="admin-eyebrow">MediMitra Admin</span><h1>{t.userManagementTitle}</h1><p>{t.userManagementDesc}</p></div><div className="admin-management-grid"><Link to="/admin/dashboard/patients" className="admin-management-card blue"><span><AdminIcon name="patients" size={28}/></span><div><h2>{t.patients}</h2><p>{d.patients.length} {t.accounts}</p></div><AdminIcon name="chevron"/></Link><Link to="/admin/dashboard/doctors" className="admin-management-card purple"><span><AdminIcon name="doctors" size={28}/></span><div><h2>{t.doctors}</h2><p>{d.doctors.length} {t.accounts}</p></div><AdminIcon name="chevron"/></Link></div></div>}
