@@ -2,6 +2,8 @@ export type ThemeMode = "light" | "dark";
 
 export type LanguageCode = "en" | "bn" | "hi";
 
+export * from "./healthCase";
+
 export interface LanguageOption {
   code: LanguageCode;
   label: string;

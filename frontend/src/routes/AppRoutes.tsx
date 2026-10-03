@@ -12,6 +12,8 @@ import { VerifyEmail } from "@/pages/patient/VerifyEmail";
 import { ForgotPassword } from "@/pages/patient/ForgotPassword";
 import { PatientDashboard } from "@/pages/patient/PatientDashboard";
 import PatientProfilePage from "@/pages/patient/PatientProfile";
+import NewHealthCasePage from "@/pages/patient/dashboard/NewHealthCasePage";
+
 // Doctor
 import { DoctorLogin } from "@/pages/doctor/DoctorLogin";
 import { DoctorRegister } from "@/pages/doctor/DoctorRegister";
@@ -117,6 +119,16 @@ export function AppRoutes() {
         element={
           <ProtectedRoute>
             <PatientProfilePage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* New Health Case */}
+      <Route
+        path="/patient/dashboard/new-case"
+        element={
+          <ProtectedRoute>
+            <NewHealthCasePage />
           </ProtectedRoute>
         }
       />

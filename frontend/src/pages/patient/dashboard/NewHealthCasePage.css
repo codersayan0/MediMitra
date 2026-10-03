@@ -1,0 +1,153 @@
+.new-health-case-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px 30px 50px;
+
+  background: var(--mx-bg, #f7faff);
+}
+
+.new-health-case-page__container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.new-health-case-page__header {
+  margin-bottom: 26px;
+}
+
+.new-health-case-page__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.new-health-case-page__header h1 {
+  margin: 0 0 8px;
+
+  color: var(--mx-ink, #172033);
+
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.new-health-case-page__header p {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--mx-muted, #718096);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.new-health-case-page__problem {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 22px;
+}
+
+.new-health-case-page__problem label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-bottom: 8px;
+
+  color: var(--mx-ink, #172033);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.new-health-case-page__problem label span {
+  color: var(--mx-muted, #718096);
+  font-weight: 500;
+}
+
+.new-health-case-page__problem textarea {
+  width: 100%;
+  resize: vertical;
+
+  min-height: 112px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--mx-border, #dce5ef);
+  border-radius: 14px;
+
+  background: var(--mx-surface, #ffffff);
+  color: var(--mx-ink, #172033);
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.new-health-case-page__problem textarea::placeholder {
+  color: var(--mx-muted, #94a3b8);
+}
+
+.new-health-case-page__problem textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.new-health-case-page__counter {
+  margin-top: 5px;
+
+  text-align: right;
+
+  color: var(--mx-muted, #94a3b8);
+
+  font-size: 11px;
+}
+
+.new-health-case-page__error {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 18px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 12px;
+
+  background: rgba(220, 38, 38, 0.06);
+  color: #b91c1c;
+
+  font-size: 13px;
+}
+
+.new-health-case-page__privacy {
+  max-width: 760px;
+  margin: 16px auto 0;
+
+  text-align: center;
+
+  color: var(--mx-muted, #718096);
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .new-health-case-page {
+    padding: 20px 14px 40px;
+  }
+}
