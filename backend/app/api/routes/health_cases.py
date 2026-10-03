@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, status
 
+from app.dependencies.auth import get_current_patient
 from app.schemas.health_case import (
     CreateHealthCaseRequest,
     CreateHealthCaseResponse,
@@ -7,7 +8,6 @@ from app.schemas.health_case import (
 )
 from app.services.health_case_service import health_case_service
 
-from app.dependencies.auth import require_role
 
 router = APIRouter(
     prefix="/patient/health-cases",
@@ -22,12 +22,9 @@ router = APIRouter(
 )
 async def create_health_case(
     payload: CreateHealthCaseRequest,
-    current_patient=Depends(require_role("patient")),
+    current_patient: dict = Depends(get_current_patient),
 ):
-    patient_id = str(
-        current_patient.get("patient_id")
-        or current_patient.get("id")
-    )
+    patient_id = str(current_patient["patient_id"])
 
     case = await health_case_service.create_case(
         patient_id=patient_id,
@@ -42,15 +39,12 @@ async def create_health_case(
     response_model=list[HealthCaseResponse],
 )
 async def get_my_health_cases(
-    current_patient=Depends(require_role("patient")),
+    current_patient: dict = Depends(get_current_patient),
 ):
-    patient_id = str(
-        current_patient.get("patient_id")
-        or current_patient.get("id")
-    )
+    patient_id = str(current_patient["patient_id"])
 
     return await health_case_service.list_cases(
-        patient_id=patient_id
+        patient_id=patient_id,
     )
 
 
@@ -60,12 +54,9 @@ async def get_my_health_cases(
 )
 async def get_health_case(
     case_id: str,
-    current_patient=Depends(require_role("patient")),
+    current_patient: dict = Depends(get_current_patient),
 ):
-    patient_id = str(
-        current_patient.get("patient_id")
-        or current_patient.get("id")
-    )
+    patient_id = str(current_patient["patient_id"])
 
     return await health_case_service.get_case(
         patient_id=patient_id,
